@@ -3,6 +3,7 @@ import './App.css';
 import Accordion from "./components/Accordion";
 import {OnnOff} from "./components/OnnOff";
 import NewSelect from "./components/NewSelect";
+import {UncontrolledAccordion} from "./components/UncontrolledAccordion";
 
 function App() {
 
@@ -42,6 +43,8 @@ function App() {
                            {value: '2', title: 'Moscow'},
                            {value: '3', title: 'Kiev'}
                        ]}/>
+
+            <UncontrolledAccordion title={'Reduser'}/>
 
         </div>
     );
