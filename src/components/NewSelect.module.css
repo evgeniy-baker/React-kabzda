@@ -1,0 +1,17 @@
+.select .main {
+    border: 1px solid black;
+    display: inline-block;
+    min-height: 25px;
+    min-width: 75px;
+}
+
+.items {
+    padding: 5px;
+    position: absolute;
+    border: 1px solid black;
+}
+
+.item:hover {
+    background-color: blue;
+    color: white;
+}
