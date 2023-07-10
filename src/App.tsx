@@ -3,22 +3,19 @@ import './App.css';
 import Accordion from "./components/Accordion";
 import {OnnOff} from "./components/OnnOff";
 import NewSelect from "./components/NewSelect";
-import {log} from "util";
 
 function App() {
-    // let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
 
+    // let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
     let [accordionValue, setAccordionValue] = useState<boolean>(false)
-    let [selectValue, setSelectValue] = useState<boolean>(true)
-    let [carValue, SetCarValue] = useState('Ford')
+    // let [selectValue, setSelectValue] = useState<boolean>(true)
+    // let [carValue, SetCarValue] = useState('Ford')
     let [on, setOn] = useState(true)
     const [title, setTitle] = useState('Moscow')
 
     const onClickCallBack = () => {
         alert("На этот элемент кликнули")
     }
-
-    //-----
 
     return (
         <div className={"App"}>
