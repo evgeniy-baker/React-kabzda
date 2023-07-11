@@ -1,46 +1,41 @@
-import React, {useReducer, useState} from "react";
+import React, {useReducer} from "react";
+import {reducer} from "./reducer/reducer";
 
 type AccordionPropsType = {
     title: string
 }
 
-type ActionType = {
-    type: string
-}
-const reducer = (state: boolean, action: ActionType) => {
-    if (action.type === "TOGGLE-COLLAPSED") {
-        return !state
-    }
-    return state
-}
-
-export function UncontrolledAccordion(props: AccordionPropsType) {
+export function UncontrolledAccordionSecret(props: AccordionPropsType) {
     // let [collapsed, setCollapsed] = useState(true)
-    let [collapsed, dispatch] = useReducer(reducer, false)
-
+    let [state, dispatch] = useReducer(reducer, {collapsed: false})
     return (
         <div>
             {/*<AccordionTitle title={props.title} onClick={ ()=>{setCollapsed(!collapsed)} }/>*/}
-            <AccordionTitle title={props.title} onClick={ ()=>{dispatch({type: "TOGGLE-COLLAPSED"})} }/>
-            {!collapsed && <AccordionBody/>}
+            <AccordionTitle title={props.title} onClick={() => dispatch({type: "TOGGLE-COLLAPSED"})}/>
+            {!state.collapsed && <AccordionBody/>}
         </div>
     )
 }
+export const UncontrolledAccordion = React.memo(UncontrolledAccordionSecret)
 
 type AccordionTitlePropsType = {
     title: string
     onClick: () => void
 }
 
-function AccordionTitle(props: AccordionTitlePropsType) {
+function AccordionTitleSecret(props: AccordionTitlePropsType) {
     return (
-        <h1 onClick={ ()=>{props.onClick()} }> --- {props.title}</h1>
+        <h1 onClick={() => {
+            props.onClick()
+        }}> -- {props.title} -- </h1>
     )
 }
 
+export const AccordionTitle = React.memo(AccordionTitleSecret)
+
 type AccordionBodyPropsType = {}
 
-function AccordionBody(props: AccordionBodyPropsType) {
+function AccordionBodySecret(props: AccordionBodyPropsType) {
     return (
         <ul>
             <li>1</li>
@@ -49,3 +44,5 @@ function AccordionBody(props: AccordionBodyPropsType) {
         </ul>
     )
 }
+
+export const AccordionBody = React.memo(AccordionBodySecret)

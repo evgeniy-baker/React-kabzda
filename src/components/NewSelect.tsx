@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
+import React, {useReducer, useState} from 'react';
 import styles from './NewSelect.module.css'
+import {reducer} from "./reducer/reducer";
 
 type ItemType = {
     value: any
@@ -15,9 +16,11 @@ type SelectType = {
 const NewSelect = (props: SelectType) => {
 
     const [active, setActive] = useState(false)
+    // const [active, dispatch] = useReducer(reducer, false)
 
     const toggleItem = () => {
         setActive(!active)
+        // dispatch({type: "TOGGLE-SELECT"})
     }
 
     const onChange = (title: any) => {

@@ -5,7 +5,7 @@ type PropsType = {
     setOn:(value: boolean) => void
 }
 
-export const OnnOff = (props: PropsType) => {
+export const OnnOffSecret = (props: PropsType) => {
     // let[on,setOn] = useState(false)
 
     const onStyle = {
@@ -36,11 +36,15 @@ export const OnnOff = (props: PropsType) => {
         margin: "5px"
     }
 
+    console.log('ON/OFF')
+
     return (
         <div>
-            <div style={onStyle} onClick={()=>{props.setOn(!props.on)}}>ON</div>
-            <div style={offStyle} onClick={()=>{props.setOn(!props.on)}}>OFF</div>
-            <div style={indicatorStyle} onClick={()=>{}}>|</div>
+            <div style={onStyle} onClick={ ()=>{props.setOn(!props.on)} }>ON</div>
+            <div style={offStyle} onClick={ ()=>{props.setOn(!props.on)} }>OFF</div>
+            <div style={indicatorStyle} onClick={ ()=>{} }>|</div>
         </div>
     );
 };
+
+export const OnnOff = React.memo(OnnOffSecret)

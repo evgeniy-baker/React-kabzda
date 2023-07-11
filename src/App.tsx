@@ -4,6 +4,7 @@ import Accordion from "./components/Accordion";
 import {OnnOff} from "./components/OnnOff";
 import NewSelect from "./components/NewSelect";
 import {UncontrolledAccordion} from "./components/UncontrolledAccordion";
+import {Example1} from "./components/ReactMemo";
 
 function App() {
 
@@ -21,31 +22,32 @@ function App() {
     return (
         <div className={"App"}>
 
-            <Accordion title={'Users'}
-                       collapsed={accordionValue}
-                       onChange={() => setAccordionValue(!accordionValue)}
-                       items={[
-                           {title: 'Name_1', value: 1},
-                           {title: 'Name_2', value: 2},
-                           {title: 'Name_3', value: 3},
-                           {title: 'Name_4', value: 4}
-                       ]}
-                       onClick={onClickCallBack}
-            />
+            {/*<Accordion title={'Users'}*/}
+            {/*           collapsed={accordionValue}*/}
+            {/*           onChange={() => setAccordionValue(!accordionValue)}*/}
+            {/*           items={[*/}
+            {/*               {title: 'Name_1', value: 1},*/}
+            {/*               {title: 'Name_2', value: 2},*/}
+            {/*               {title: 'Name_3', value: 3},*/}
+            {/*               {title: 'Name_4', value: 4}*/}
+            {/*           ]}*/}
+            {/*           onClick={onClickCallBack}*/}
+            {/*/>*/}
 
             <OnnOff on={on}
                     setOn={setOn}/>
 
-            <NewSelect title={title}
-                       onChange={setTitle}
-                       items={[
-                           {value: '1', title: 'Minsk'},
-                           {value: '2', title: 'Moscow'},
-                           {value: '3', title: 'Kiev'}
-                       ]}/>
+            {/*<NewSelect title={title}*/}
+            {/*           onChange={setTitle}*/}
+            {/*           items={[*/}
+            {/*               {value: '1', title: 'Minsk'},*/}
+            {/*               {value: '2', title: 'Moscow'},*/}
+            {/*               {value: '3', title: 'Kiev'}*/}
+            {/*           ]}/>*/}
 
-            <UncontrolledAccordion title={'Reduser'}/>
+            <UncontrolledAccordion title={'useReducer'}/>
 
+            <Example1/>
         </div>
     );
 }
