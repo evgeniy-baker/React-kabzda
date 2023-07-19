@@ -1,23 +1,19 @@
 import React, {useState} from 'react';
 import './App.css';
-import Accordion from "./components/Accordion";
-import {OnnOff} from "./components/OnnOff";
-import NewSelect from "./components/NewSelect";
-import {UncontrolledAccordion} from "./components/UncontrolledAccordion";
-import {Example1} from "./components/ReactMemo";
+import {ReactMemo} from "./ReactMemo";
 
 function App() {
 
     // let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
-    let [accordionValue, setAccordionValue] = useState<boolean>(false)
+    // let [accordionValue, setAccordionValue] = useState<boolean>(false)
     // let [selectValue, setSelectValue] = useState<boolean>(true)
     // let [carValue, SetCarValue] = useState('Ford')
     let [on, setOn] = useState(true)
-    const [title, setTitle] = useState('Moscow')
+    // const [title, setTitle] = useState('Moscow')
 
-    const onClickCallBack = () => {
-        alert("На этот элемент кликнули")
-    }
+    // const onClickCallBack = () => {
+    //     alert("На этот элемент кликнули")
+    // }
 
     return (
         <div className={"App"}>
@@ -34,8 +30,8 @@ function App() {
             {/*           onClick={onClickCallBack}*/}
             {/*/>*/}
 
-            <OnnOff on={on}
-                    setOn={setOn}/>
+            {/*<OnnOff on={on}*/}
+            {/*        setOn={setOn}/>*/}
 
             {/*<NewSelect title={title}*/}
             {/*           onChange={setTitle}*/}
@@ -45,9 +41,12 @@ function App() {
             {/*               {value: '3', title: 'Kiev'}*/}
             {/*           ]}/>*/}
 
-            <UncontrolledAccordion title={'useReducer'}/>
+            {/*<UncontrolledAccordion title={'useReducer'}/>*/}
 
-            <Example1/>
+            {/*<Example1/>*/}
+
+            <ReactMemo/>
+
         </div>
     );
 }
