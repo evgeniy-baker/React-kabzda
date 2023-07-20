@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
-import {ReactMemo} from "./ReactMemo";
+import {ReactMemo} from "./components/ReactMemo";
+import {UseMemo} from "./components/UseMemo";
 
 function App() {
 
@@ -45,7 +46,9 @@ function App() {
 
             {/*<Example1/>*/}
 
-            <ReactMemo/>
+            {/*<ReactMemo/>*/}
+
+            <UseMemo/>
 
         </div>
     );

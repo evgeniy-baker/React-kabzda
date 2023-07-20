@@ -1,34 +1,35 @@
 import React, {useState} from 'react';
 
-const Counter = (props: { count: number }) => {
-    return (
-        <div>{props.count}</div>
-    )
-}
-const UsersSecret = (props: { users: Array<string> }) => {
-    console.log("USERS")
-    return (
-        <div>{props.users.map((u, i) => <div key={i}>{u}</div>)}</div>
-    )
+const NewMessageCounter = (props: { count: number }) => {
+    return <div>{props.count}</div>
 }
 
-const Users = React.memo(UsersSecret)
+const UsersToMemo = (props: { users: Array<string> }) => {
+    console.log('Users rendered')
+    return <div>
+        {props.users.map((u, i) => <div key={i}>
+            {u}
+        </div>)}
+    </div>
+}
+const Users = React.memo(UsersToMemo)
 
-export const Example1 = () => {
-    const[counter, setCounter] = useState(0)
-    const[users, setUsers] = useState(['Name1', 'Name2', 'Name3'])
+export const ReactMemo = () => {
+    console.log('ReactMemo rendered')
+    const [counter, setCount] = useState<number>(10)
+    const [users, setUsers] = useState<Array<string>>(['Evgenii', 'Dasha', 'Dima', 'Vika'])
 
     const addUser = () => {
-        const addUser = `Name ${counter}`
-        setUsers([addUser,...users])
+        console.log('newUser rendered')
+        const newUser = `ФИО ${new Date().getTime()}`
+        setUsers([newUser, ...users])
     }
 
-    return (
-        <>
-            <button onClick={ () => setCounter(counter + 1) }>+</button>
-            <button onClick={ addUser }>user + 1</button>
-            <Counter count={counter}/>
-            <Users users={users}/>
-        </>
-    );
+    return <>
+        <NewMessageCounter count={counter}/>
+        <button onClick={() => setCount(counter + 1)}>count + 1</button>
+        <button onClick={addUser}>add user</button>
+        <Users users={users}/>
+    </>
+
 };
