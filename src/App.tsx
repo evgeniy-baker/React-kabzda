@@ -3,6 +3,7 @@ import './App.css';
 import {ReactMemo} from "./components/ReactMemo";
 import {UseMemo} from "./components/UseMemo";
 import {LikeUseCallback} from "./components/UseCallback";
+import {UseEffectApp} from "./components/UseEffect";
 
 function App() {
 
@@ -51,7 +52,9 @@ function App() {
 
             {/*<UseMemo/>*/}
 
-            <LikeUseCallback/>
+            {/*<LikeUseCallback/>*/}
+
+            <UseEffectApp/>
 
         </div>
     );
